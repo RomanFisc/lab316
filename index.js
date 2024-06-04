@@ -34,4 +34,15 @@ topMenuEl.classList.add('flex-around');
 //
 // Part 3 adding menu buttons
 //
+// loop over each item in menulinks 
+// add each item to an a element 
+// append a elements to topMenuEl
+
+
+menuLinks.forEach((menuLink) => {
+  const button = document.createElement('a');
+  button.setAttribute("href", menuLink["href"]);
+  button.textContent = menuLink['text'];
+  topMenuEl.appendChild(button);
+})
 
