@@ -38,7 +38,6 @@ topMenuEl.classList.add('flex-around');
 // add each item to an a element 
 // append a elements to topMenuEl
 
-
 menuLinks.forEach((menuLink) => {
   const button = document.createElement('a');
   button.setAttribute("href", menuLink["href"]);
@@ -46,3 +45,14 @@ menuLinks.forEach((menuLink) => {
   topMenuEl.appendChild(button);
 })
 
+// Lab 316.3.1
+// Creating submenu 
+
+let subMenuEl = document.getElementById('sub-menu')
+subMenuEl.style.height = '100%';
+subMenuEl.style.background = 'var(--sub-menu-bg';
+subMenuEl.classList.add('flex-around');
+subMenuEl.style.position = 'absolute';
+subMenuEl.style.top = '0';
+
+// Adding menu interaction
