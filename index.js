@@ -76,6 +76,9 @@ subMenuEl.style.top = '0';
 // Adding menu interaction
 // to add interaction cache all a elements in topmenulinks
 
+
+
+
 let topMenuLinks = topMenuEl.querySelectorAll('a');
 
 topMenuEl.addEventListener("click", menuFunc);
@@ -85,7 +88,26 @@ function menuFunc(event) {
   if (event.target.tagName !== 'A') {
     return
   }
+  // get all a within function
+  // go through and remove active from each link
+  // create conditional statement
+  // if the a doesnt have active class 
+  // add active class
+
+  let topMenuLinks = topMenuEl.querySelectorAll('a');
+  topMenuLinks.forEach((link) => {
+    link.classList.remove("active")
+  });
+
+  if (!event.target.classList.contains("active")) {
+    event.target.classList.add("active");
+  }
+
   console.log(event.target.innerText)
+  //within smae menu we want to toggle submenu between active and nonactive states
 };
 
 //
+//Adding submenu interaction: 
+
+
