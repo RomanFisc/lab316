@@ -102,6 +102,13 @@ function menuFunc(event) {
     return;
   }
 
+  /////adding about 
+  let main = document.querySelector('main')
+  if (event.target.innerText === 'ABOUT') {
+    main.querySelector('h1').textContent = event.target.textContent;
+    return;
+  }
+
   topMenuLinks.forEach((link) => {
     link.classList.remove("active");
   });
@@ -155,5 +162,17 @@ function subMenuFunc(event){
   }
   //console.log(event.target) //working
   subMenuEl.style.top = "0"
-  
+
+  let topMenuLinks = topMenuEl.querySelectorAll('a');
+  topMenuLinks.forEach(link => {
+    if (link.classList.contains("active")) {
+      link.classList.remove("active");
+    }
+  });
+
+  let main = document.querySelector('main')
+  main.querySelector('h1').textContent = event.target.textContent;
+
+  console.log(event.target.innerText);
+
 }
