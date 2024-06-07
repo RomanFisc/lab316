@@ -153,5 +153,7 @@ function subMenuFunc(event){
   if (event.target.tagName !== 'A') {
     return
   }
-  console.log(event.target) //working
+  //console.log(event.target) //working
+  subMenuEl.style.top = "0"
+  
 }
