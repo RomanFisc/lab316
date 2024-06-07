@@ -88,11 +88,6 @@ function menuFunc(event) {
   if (event.target.tagName !== 'A') {
     return
   }
-  // get all a within function
-  // go through and remove active from each link
-  // create conditional statement
-  // if the a doesnt have active class 
-  // add active class
 
   let topMenuLinks = topMenuEl.querySelectorAll('a');
   topMenuLinks.forEach((link) => {
@@ -100,14 +95,35 @@ function menuFunc(event) {
   });
 
   if (!event.target.classList.contains("active")) {
-    event.target.classList.add("active");
-  }
+    event.target.classList.add("active") 
+    if (event.target.textContent !== "about") {
+      subMenuEl.style.top = "100%"
+      const links = menuLinks.filter((element) => {
+        if (event.target.textContent === element.text) {
+          return element.subLinks
+        }
+        // return element.subLinks
+      })
+      console.log(links);
 
+    } else {
+      subMenuEl.style.top = "0"
+    }
+
+    // how do I do this part? 
+    // let linked = ;
+    // if (linked.hasOwnProperty("subLinks")) {
+    //   subMenuEl.style.top = "100%";
+    // } else {
+    //   subMenuEl.style.top = "0";
+    // }
+  } 
+  // else if (event.target.classList.contains('active')) {
+  //   event.target.classList.remove('active')
+  //   subMenuEl.style.top = "0"
+  //   console.log("test")
+  // }
   console.log(event.target.innerText)
-  //within smae menu we want to toggle submenu between active and nonactive states
 };
-
-//
-//Adding submenu interaction: 
 
 
